@@ -1,0 +1,33 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+<style>
+
+    .s3{color:black}
+    .s4{color:black}
+    .s2{color:black}
+    .s1{color:black}
+
+</style>
+<h3><strong>Rendering Partial View: </strong></h3>
+<ol class="round">
+    <li class="one">
+        <h5 class="s3"><b>By Using Html.RenderPartial </b>:-&nbsp; render/write on output stream and <b> returns void</b> and it's very <b>fast</b> in comparison to Html.Partial</h5>
+        @{Html.RenderPartial("MyPartial"); }
+    </li>
+
+    <li class="two">
+        <h5 class="s4"><b>By Using Html.Partial :- </b>returns <strong>MvcHtmlString </strong>and <b>slow</b></h5></b> 
+
+        @Html.Partial("MyPartial")
+    </li>
+
+    <li class="three">
+        <h5 class="s2"><b>By Using Html.RenderAction :-</b> &nbsp;Use RenderAction when you do not have a model to send to the view and have a <b>lot of html </b>to bring back that  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; doesn't need to be stored in a variable. </h5>
+        @{Html.RenderAction("ShowMyPartialView", "Home");}
+    </li>
+    <li class="four">
+        <h5 class=" s1"><b>By Using Html.Action :-</b>&nbsp; Use <b>Action</b> when you do not have a model to send to the view and have a <b>little bit of text</b> to bring back that needs to  &nbsp; &nbsp;   &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;      be   stored in a variable.</h5>
+        @Html.Action("ShowMyPartialView")
+    </li>
+</ol>
